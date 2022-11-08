@@ -1,0 +1,29 @@
+"0","Sys.setenv(VROOM_CONNECTION_SIZE=500072)"
+"0","assign_nba_players()"
+"1","Assigning NBA player dictionary to df_dict_nba_players to your environment"
+"1","
+"
+"2","Warning:"
+"2"," [38;5;232mThe `x` argument of `as_tibble.matrix()` must have unique column names if `.name_repair` is omitted as of tibble 2.0.0.
+[36mℹ[38;5;232m Using compatibility `.name_repair`.
+[36mℹ[38;5;232m The deprecated feature was likely used in the [34mnbastatR[38;5;232m package.
+  Please report the issue at [3m[34m<https://github.com/abresler/nbastatR/issues>[38;5;232m[23m.
+[90mThis warning is displayed once every 8 hours.[38;5;232m
+[90mCall `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.[38;5;232m[39m
+"
+"0","name <- c(""ATL"", ""BKN"", ""BOS"", ""CHA"", ""CHI"", ""CLE"", ""DAL"", ""DEN"", ""DET"", ""GSW"", ""HOU"", ""IND"", ""LAC"", ""LAL"", ""MEM"", ""MIA"", ""MIL"", ""MIN"", ""NOP"", ""NYK"", ""OKC"", ""ORL"", ""PHI"", ""PHX"", ""POR"", ""SAC"", ""SAS"", ""TOR"", ""UTA"",""WAS"")"
+"0","#schedule <- read.csv(""C:/Users/haosi/Desktop/schedule.csv"")[c(-1,-11,-22),c(1,2)]"
+"0",""
+"0",""
+"0",""
+"0","urlb <- ""https://hashtagbasketball.com/advanced-nba-schedule-grid"""
+"0","## 网页中数据表的xpath"
+"0","xpath <- '//*[@id=""UpdatePanel1""]/div/div[3]/div[2]/div/div/div[5]/div[2]/div'"
+"0","## 读入网页并提取其中的表格节点"
+"0","nodes <- html_nodes(read_html(urlb), xpath=xpath)"
+"0"," "
+"0","## 从表格节点转换为表格列表"
+"0","schedule <- html_table(nodes)[[1]][c(-1,-11,-22),c(1,2)]"
+"0","colnames(schedule) <- c(""TEAM"", ""GAMES"")"
+"0","schedule$TEAM <- name"
+"0","schedule$GAMES <- as.numeric(schedule$GAMES)"

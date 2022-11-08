@@ -1,0 +1,2 @@
+"0","mix_mat <- diag(dim) # create a diagonal matrix as the mixing matrix"
+"0","xs <- t(mix_mat %*% t(zs))"

@@ -1,0 +1,3 @@
+"0","sample_size <- 1000"
+"0","coords <- runif(sample_size * 2) * 50"
+"0","dim(coords) <- c(sample_size, 2)"

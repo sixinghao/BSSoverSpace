@@ -1,0 +1,50 @@
+"0","library(expm)"
+"2","载入需要的程辑包：Matrix
+"
+"2","
+载入程辑包：‘Matrix’
+
+"
+"2","The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+"
+"2","
+载入程辑包：‘expm’
+
+"
+"2","The following object is masked from ‘package:Matrix’:
+
+    expm
+
+"
+"0","library(JADE)"
+"0","library(pracma)"
+"2","
+载入程辑包：‘pracma’
+
+"
+"2","The following objects are masked from ‘package:expm’:
+
+    expm, logm, sqrtm
+
+"
+"2","The following objects are masked from ‘package:Matrix’:
+
+    expm, lu, tril, triu
+
+"
+"2","The following object is masked from ‘package:purrr’:
+
+    cross
+
+"
+"0","library(SpatialBSS)"
+"0","library(RSpectra)"
+"2","Warning:"
+"2"," 程辑包‘RSpectra’是用R版本4.2.2 来建造的
+"
+"0","setwd(""C:/Users/haosi/Desktop/LSE/SBSS/newsbss/doc"")"
+"0","source(""../lib/BSSS_main_function.R"")"
+"0","source(""../lib/BSSS_other_function.R"")"

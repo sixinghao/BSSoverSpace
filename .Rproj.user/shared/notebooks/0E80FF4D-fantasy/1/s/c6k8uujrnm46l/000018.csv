@@ -1,0 +1,101 @@
+"0","sushi_players <- c(""Trae Young"",          #1"
+"0","                   ""Jalen Green"",         #2"
+"0","                   ""Bennedict Mathurin"",  #3"
+"0","                   ""LeBron James"",        #4"
+"0","                   ""Andrew Wiggins"",      #5"
+"0","                   ""Wendell Carter Jr."",  #6"
+"0","                   ""Christian Wood"",      #7"
+"0","                   ""Pascal Siakam"",       #8"
+"0","                   ""Jaden Ivey"",          #9"
+"0","                   ""Jamal Murray"",        #10"
+"0","                   ""Mike Conley"",         #11"
+"0","                   ""Christian Koloko"",    #12"
+"0","                   ""Bol Bol"",             #13"
+"0","                   ""Chris Boucher"")       #14"
+"0",""
+"0","sushi <- fantasy_data(sushi_players[c(-2,-8,-3,-12)], ""sushi"")"
+"1","Acquiring LeBron James career PerGame statistic tables
+Acquiring Mike Conley career PerGame statistic tables
+Acquiring Andrew Wiggins career PerGame statistic tables
+Acquiring Christian Wood career PerGame statistic tables
+Acquiring Jamal Murray career PerGame statistic tables
+Acquiring Chris Boucher career PerGame statistic tables
+Acquiring Wendell Carter Jr. career PerGame statistic tables
+Acquiring Trae Young career PerGame statistic tables
+Acquiring Bol Bol career PerGame statistic tables
+Acquiring Jaden Ivey career PerGame statistic tables
+"
+"1","SeasonTotalsRegularSeason"
+"1","
+"
+"2","Warning:"
+"2"," `cols` is now required when using unnest().
+Please use `cols = c(dataTable)`
+"
+"1","CareerTotalsRegularSeason"
+"1","
+"
+"2","Warning:"
+"2"," `cols` is now required when using unnest().
+Please use `cols = c(dataTable)`
+"
+"1","SeasonTotalsPostSeason"
+"1","
+"
+"2","Warning:"
+"2"," `cols` is now required when using unnest().
+Please use `cols = c(dataTable)`
+"
+"1","CareerTotalsPostSeason"
+"1","
+"
+"2","Warning:"
+"2"," `cols` is now required when using unnest().
+Please use `cols = c(dataTable)`
+"
+"1","SeasonTotalsAllStarSeason"
+"1","
+"
+"2","Warning:"
+"2"," `cols` is now required when using unnest().
+Please use `cols = c(dataTable)`
+"
+"1","CareerTotalsAllStarSeason"
+"1","
+"
+"2","Warning:"
+"2"," `cols` is now required when using unnest().
+Please use `cols = c(dataTable)`
+"
+"1","SeasonRankingsRegularSeason"
+"1","
+"
+"2","Warning:"
+"2"," `cols` is now required when using unnest().
+Please use `cols = c(dataTable)`
+"
+"1","SeasonRankingsPostSeason"
+"1","
+"
+"2","Warning:"
+"2"," `cols` is now required when using unnest().
+Please use `cols = c(dataTable)`
+"
+"1","SeasonTotalsCollegeSeason"
+"1","
+"
+"2","Warning:"
+"2"," `cols` is now required when using unnest().
+Please use `cols = c(dataTable)`
+"
+"1","CareerTotalsCollegeSeason"
+"1","
+"
+"2","Warning:"
+"2"," `cols` is now required when using unnest().
+Please use `cols = c(dataTable)`
+"
+"0","schedule$GAMES[18] <- 3"
+"0",""
+"0",""
+"0","plotting(sushi$proj, Zhenhao$proj)"

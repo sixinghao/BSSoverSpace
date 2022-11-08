@@ -1,0 +1,5 @@
+"0","library('BSSoverSpace')"
+"0","dim <- 10 # specify the dimensionality of random variable"
+"0","nu <- runif(dim, 0, 6) # parameter for matern covariance function"
+"0","kappa <- runif(dim, 0, 2) # parameter for matern covariance function"
+"0","zs <- gen_matern_gaussian_rf(coords=coords, dim=dim, nu=nu, kappa=kappa)"
