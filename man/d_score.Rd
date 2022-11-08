@@ -17,3 +17,6 @@ A numeric value in [0,1].
 \description{
 d score measures the similarity of two square matrix with same dimension. d_score equals 0 if the estimator is a column permutation of true value.
 }
+\examples{
+d_score(diag(3), diag(3))
+}

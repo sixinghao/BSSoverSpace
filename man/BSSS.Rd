@@ -18,11 +18,27 @@ BSSS(x, coord, kernel_type, kernel_parameter, kernel_list = NULL)
 \item{kernel_list}{List of spatial kernel matrices with dimension c(n,n). Can be computed by the function \code{\link[SpatialBSS]{spatial_kernel_matrix}}.}
 }
 \value{
-BSSS returns a list, including the estimation of maxing matrix, and the estimated latent field.
+BSSS returns a list, including the estimation of maxing matrix, the estimated latent field, and eigenvalues of matrix W for validating the estimation. See  Zhang, Hao and Yao (2022) <arXiv:2201.02023> for details.
 }
 \description{
 BSSS estimates the mixing matrix of blind source separation model for multivariate spatial data.
 }
 \details{
 BSSS estimates the mixing matrix by combining the information of all local covariance matrices together and conduct eigenanalysis.
+}
+\examples{
+
+\donttest{
+sample_size <- 500
+coords <- runif(sample_size * 2) * 50
+dim(coords) <- c(sample_size, 2)
+dim <- 5 # specify the dimensionality of random variable
+nu <- runif(dim, 0, 6) # parameter for matern covariance function
+kappa <- runif(dim, 0, 2) # parameter for matern covariance function
+zs <- gen_matern_gaussian_rf(coords=coords, dim=dim, nu=nu, kappa=kappa)
+mix_mat <- diag(dim) # create a diagonal matrix as the mixing matrix
+xs <- t(mix_mat \%*\% t(zs))
+example <- BSSS(xs, coords, 'ring', c(0,0.5,0.5,1,1,8))
+d_score(example$mix_mat_est, mix_mat)
+}
 }

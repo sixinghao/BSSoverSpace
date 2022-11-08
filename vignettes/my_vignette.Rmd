@@ -29,19 +29,19 @@ Blind Source Separation Over Space (BSSS) is a tool for analyzing spatial multiv
 
 In this package `BSSoverSpace`, the main function is `BSSS`. It implemented the method in @zhang_blind_2022 for estimating the latent field $Z(s)$, and the unmixing matrix. This function takes 5 inputs: `x` is the data matrix of observed random field $X(s)$. `coord` is the coordinate of observed random field $X(s)$.  `kernel_type` and `kernel_parameter` are the specifications of kernels for us to select. For each `kernel_type`, specification of `kernel_parameter` slightly differs. If `kernel_type` equals `'ring'`, there must be an even number of parameters in `kernel_parameter`. Check `spatial_kernel_matrix` from package `SpatialBSS` for more details. 
 
-Here, we generate a random field and use it to demonstrate the usage of this function. First we generate 1000 2-dimensional coordinates:
+Here, we generate a random field and use it to demonstrate the usage of this function. First we generate 500 2-dimensional coordinates:
 
 ```{r sim coords}
-sample_size <- 1000
+sample_size <- 500
 coords <- runif(sample_size * 2) * 50
 dim(coords) <- c(sample_size, 2)
 ```
 
-Next, we generate a 10-variate latent gaussian random field $Z(s)$ with matern covariance function in the following way:
+Next, we generate a 5-variate latent gaussian random field $Z(s)$ with matern covariance function in the following way:
 
 ```{r sim zs}
 library('BSSoverSpace')
-dim <- 10 # specify the dimensionality of random variable
+dim <- 5 # specify the dimensionality of random variable
 nu <- runif(dim, 0, 6) # parameter for matern covariance function
 kappa <- runif(dim, 0, 2) # parameter for matern covariance function
 zs <- gen_matern_gaussian_rf(coords=coords, dim=dim, nu=nu, kappa=kappa)

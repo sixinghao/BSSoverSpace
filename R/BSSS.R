@@ -6,9 +6,26 @@
 #' @param kernel_parameter A numeric vector that gives the parameters for the kernel function. At least length of one for 'ball' and 'gauss' or two for 'ring' kernel.
 #' @param kernel_list List of spatial kernel matrices with dimension c(n,n). Can be computed by the function \code{\link[SpatialBSS]{spatial_kernel_matrix}}.
 #' @details BSSS estimates the mixing matrix by combining the information of all local covariance matrices together and conduct eigenanalysis.
-#' @return BSSS returns a list, including the estimation of maxing matrix, the estimated latent field, and eigenvalues of $\hat{W}$ for validating the estimation.
+#' @return BSSS returns a list, including the estimation of maxing matrix, the estimated latent field, and eigenvalues of matrix W for validating the estimation. See  Zhang, Hao and Yao (2022) <arXiv:2201.02023> for details.
 #' @import SpatialBSS expm
 #' @export
+#' @examples
+#'
+#' \donttest{
+#' sample_size <- 500
+#' coords <- runif(sample_size * 2) * 50
+#' dim(coords) <- c(sample_size, 2)
+#' dim <- 5 # specify the dimensionality of random variable
+#' nu <- runif(dim, 0, 6) # parameter for matern covariance function
+#' kappa <- runif(dim, 0, 2) # parameter for matern covariance function
+#' zs <- gen_matern_gaussian_rf(coords=coords, dim=dim, nu=nu, kappa=kappa)
+#' mix_mat <- diag(dim) # create a diagonal matrix as the mixing matrix
+#' xs <- t(mix_mat %*% t(zs))
+#' example <- BSSS(xs, coords, 'ring', c(0,0.5,0.5,1,1,8))
+#' d_score(example$mix_mat_est, mix_mat)
+#' }
+
+
 
 BSSS<- function(x, coord,  kernel_type, kernel_parameter, kernel_list = NULL){
   x <-x-mean(x)

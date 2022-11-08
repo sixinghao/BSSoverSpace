@@ -4,6 +4,7 @@
 #' @param true_value A square matrix, which the estimator is compared to.
 #' @return A numeric value in [0,1].
 #' @export
+#' @examples d_score(diag(3), diag(3))
 
 d_score <- function(estimator, true_value){
   d <- solve(estimator) %*% true_value
