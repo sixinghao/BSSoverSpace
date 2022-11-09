@@ -60,12 +60,12 @@ Now the observed random field $X(s)$ is created, and we need to choose kernels. 
 example<-BSSS(xs, coord = coords, kernel_type = 'ring', kernel_parameter = c(0, 0.5, 0.5, 1, 1, 8))
 ```
 
-The function `BSSS` returns both the estimated mixing matrix $\hat{\Omega}$ `mix_mat_est` and the estimated latent field $\hat{Z(s)}$. To see how good $\hat{\Omega}$ is, we can use function `d_score`, which gives a numeric value between 0 and 1, with 0 meaning that the estimator is a column permutation of true value:
+The function `BSSS` returns both the estimated mixing matrix $\hat{\Omega}$ `mix_mat_est` and the estimated latent field $\widehat{Z(s)}$. To see how good $\hat{\Omega}$ is, we can use function `d_score`, which gives a numeric value between 0 and 1, with 0 meaning that the estimator is a column permutation of true value:
 
 ```{r d_score}
 d_score(example$mix_mat_est, mix_mat)
 ```
-We can further explore the validity of our estimation, by looking at the eigenvalues of $\hat{W}$. Larger gap between first few eigenvalues would strengthen the validity of our estimation.
+We can further explore the validity of our estimation, by looking at the eigenvalues of $\hat{W}$. Larger gap between first few eigenvalues would strengthen the validity of our estimation. One can see the details of $\hat{W}$ in @zhang_blind_2022.
 
 ```{r}
 plot(example$w_eigenvalue)

@@ -6,7 +6,7 @@
 #' @param kernel_parameter A numeric vector that gives the parameters for the kernel function. At least length of one for 'ball' and 'gauss' or two for 'ring' kernel.
 #' @param kernel_list List of spatial kernel matrices with dimension c(n,n). Can be computed by the function \code{\link[SpatialBSS]{spatial_kernel_matrix}}.
 #' @details BSSS estimates the mixing matrix by combining the information of all local covariance matrices together and conduct eigenanalysis.
-#' @return BSSS returns a list, including the estimation of maxing matrix, the estimated latent field, and eigenvalues of matrix W for validating the estimation. See  Zhang, Hao and Yao (2022) <arXiv:2201.02023> for details.
+#' @return BSSS returns a list, including the estimation of maxing matrix, the estimated latent field, and eigenvalues of matrix W for validating the estimation. Larger gaps among first few eigenvalues of matrix W strengthens the validity of estimation. See  Zhang, Hao and Yao (2022) <arXiv:2201.02023> for details.
 #' @import SpatialBSS expm
 #' @export
 #' @examples

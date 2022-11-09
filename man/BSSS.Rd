@@ -18,7 +18,7 @@ BSSS(x, coord, kernel_type, kernel_parameter, kernel_list = NULL)
 \item{kernel_list}{List of spatial kernel matrices with dimension c(n,n). Can be computed by the function \code{\link[SpatialBSS]{spatial_kernel_matrix}}.}
 }
 \value{
-BSSS returns a list, including the estimation of maxing matrix, the estimated latent field, and eigenvalues of matrix W for validating the estimation. See  Zhang, Hao and Yao (2022) <arXiv:2201.02023> for details.
+BSSS returns a list, including the estimation of maxing matrix, the estimated latent field, and eigenvalues of matrix W for validating the estimation. Larger gaps among first few eigenvalues of matrix W strengthens the validity of estimation. See  Zhang, Hao and Yao (2022) <arXiv:2201.02023> for details.
 }
 \description{
 BSSS estimates the mixing matrix of blind source separation model for multivariate spatial data.
